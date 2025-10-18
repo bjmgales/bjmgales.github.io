@@ -47,11 +47,6 @@ const Menu = React.memo(function Menu(props) {
         }, 800)
     }, [cleanAndDisplay.clean])
 
-    // useEffect(()=>{
-    //     history.pushState(null, '', '/');
-    //     console.log('testHome')
-    // }, [])
-
     const submenuHandler = (submenu, key) =>{
         return(
             <ul className="submenu">

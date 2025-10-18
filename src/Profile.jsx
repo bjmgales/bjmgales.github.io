@@ -6,6 +6,7 @@ import me from './assets/bjm.jpg';
 import github from './assets/Github.svg';
 import linkedin from './assets/linkedin.svg';
 import fortytwo from './assets/42_Logo.svg';
+import react_icon from './assets/react.svg'
 import ouch from './assets/sounds/aie0.mp3'
 import ouchh from './assets/sounds/aie1.mp3'
 import ouchhh from './assets/sounds/aie2.mp3'
@@ -58,6 +59,17 @@ export default function Profile(props) {
 
     return (
         <>
+        <div className="reactDiv">
+            <span className>
+                Made with
+            </span>
+            <span className="reactTitle">
+                <img className="noCrop react" src={react_icon}>
+                </img>
+                React
+            </span>
+        </div>
+
         <div className="fortytwo">
             <Svg
                 src={fortytwo}

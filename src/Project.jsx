@@ -82,6 +82,7 @@ const Video = ({src, isVisible, videoRef, mobileFormat = false, offMobile=false}
                         preload="auto"
                         className={!mobileFormat ? (offMobile ? 'video hide' : className) : className}
                         src={"/assets/video/" + src + ".mp4"}
+                        style={className ? {visibility: 'visible'} : {visibility: 'hidden'}}
                         type="mp4"
                         webkitplaysinline='true'
                         playsInline
@@ -217,6 +218,7 @@ export default function MyProjects({mobileFormat = false, ...props}){
             document.querySelector('.videoContainer').classList.add('fadeOut');
         const t = setTimeout(()=>{
             props.setHideHome(false);
+            props.setHidePage(true)
             props.setChangePage( prev=>({...prev, change: false}));
         }, 1000)
         return (()=>{clearTimeout(t)});

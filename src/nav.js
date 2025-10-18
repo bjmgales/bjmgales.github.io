@@ -8,7 +8,6 @@ export function navigation(setHideHome, setHidePage, setChangePage){
     const redirect = urlParams.get('redirect');
     let path;
     redirect ? path = redirect : path = window.location.pathname;
-    console.log(path)
     switch (path){
         case '/':
             setHideHome(false)
@@ -16,40 +15,43 @@ export function navigation(setHideHome, setHidePage, setChangePage){
             setChangePage({change: false, name: ''})
             return;
 
-        case '/assets/mydoc/Cv-fr.pdf':
-          setChangePage({
+        case '/resume-fr':
+            setChangePage({
               change: true,
-              name: "/assets/mydoc/Cv-fr.pdf"
-          })
-          setHideHome(true);
+              name: "/assets/mydoc/resume-fr.pdf"
+            })
+            setHideHome(true);
+            setHidePage(false);
           return;
 
-        case '/assets/mydoc/Cv-en.pdf':
+        case '/resume-en':
             setChangePage({
                     change: true,
-                    name: "/assets/mydoc/Cv-en.pdf"
+                    name: "/assets/mydoc/resume-en.pdf"
             })
             setHideHome(true);
+            setHidePage(false);
           return;
 
-        case '/assets/mydoc/Motiv-fr.pdf':
+        case '/cover-fr':
             setChangePage({
                 change: true,
-                name: "/assets/mydoc/Motiv-fr.pdf"
+                name: "/assets/mydoc/cover-fr.pdf"
             })
             setHideHome(true);
+            setHidePage(false);
           return;
 
-        case '/assets/mydoc/Motiv-en.pdf':
+        case '/cover-en':
             setChangePage({
                 change: true,
-                name: "/assets/mydoc/Motiv-en.pdf"
+                name: "/assets/mydoc/cover-en.pdf"
             })
             setHideHome(true);
+            setHidePage(false);
           return;
 
         case '/Solong':
-          console.log('hello from solong')
             setChangePage({
                 change: true,
                 name: "So long"
@@ -98,7 +100,6 @@ export function navigation(setHideHome, setHidePage, setChangePage){
             setHideHome(true);
           return;
         }
-    console.log('shouldbe404')
     return (404)
 }
 

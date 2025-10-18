@@ -20,10 +20,8 @@ export default function MainComp(){
 
     const handleRedirect = () =>{navigation(setHideHome, setHidePage, setChangePage);}
     const handleLoad = ()=>{
-        console.log(window.location.pathname)
             if (navigation(setHideHome, setHidePage, setChangePage) === 404){
-                    console.log('in If after 404 from navigation')
-                    window.location.href = '/redir404.html';
+                window.location.href = '/redir404.html';
             }
             else{
                 pushHistory(window.location.pathname)
@@ -50,7 +48,6 @@ export default function MainComp(){
             display:"flex",
             flexDirection:"column",
             alignItems:"center"}}>
-
             {
                 !hideHome &&
                  <Profile setChangePage={setChangePage} changePage={changePage} setHideHome={setHideHome} setHidePage={setHidePage} mobileFormat={mobileFormat}/>
@@ -69,9 +66,9 @@ export default function MainComp(){
             </div>
             {
                 changePage.name.includes("mydoc") ?
-                    <MyDocuments changePage={changePage} hidePage={hidePage} setHideHome={setHideHome} setChangePage={setChangePage} mobileFormat={mobileFormat}/> :
+                    <MyDocuments changePage={changePage} hidePage={hidePage} setHidePage={setHidePage} setHideHome={setHideHome} setChangePage={setChangePage} mobileFormat={mobileFormat}/> :
                     <div className={'projDiv'}>
-                        <MyProjects changePage={changePage} hidePage={hidePage} setHideHome={setHideHome} setChangePage={setChangePage} mobileFormat={mobileFormat}/>
+                        <MyProjects changePage={changePage} setHidePage={setHidePage} hidePage={hidePage} setHideHome={setHideHome} setChangePage={setChangePage} mobileFormat={mobileFormat}/>
                     </div>
             }
             </>
